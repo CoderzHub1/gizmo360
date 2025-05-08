@@ -17,13 +17,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <div className={`${styles.page} ${geistSans.variable}`}>
         <Navbar />
         <main className={styles.main}>
           <h1 className={styles.title}>Gizmo360</h1>
           <p className={styles.subtitle}>Stay ahead with the latest in technology</p>
-          
+
           <div className={styles.featuredPosts}>
             <h2 className={styles.sectionTitle}>Featured Articles</h2>
             <div className={styles.content}>
@@ -37,7 +37,7 @@ export default function Home() {
                   <span>Trending</span>
                 </div>
               </div>
-              
+
               <div className={styles.card}>
                 <span className={styles.tag}>Web Dev</span>
                 <h3>Modern Web Development</h3>
@@ -48,7 +48,7 @@ export default function Home() {
                   <span>Popular</span>
                 </div>
               </div>
-              
+
               <div className={styles.card}>
                 <span className={styles.tag}>Cybersecurity</span>
                 <h3>Security in the Digital Age</h3>
