@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from "next/head";
 import { Geist } from "next/font/google";
 import styles from "@/styles/Home.module.css";
@@ -9,6 +11,26 @@ const geistSans = Geist({
 });
 
 export default function Home() {
+  const router = useRouter();
+  const [userEmail, setUserEmail] = useState('');
+
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    const email = localStorage.getItem('userEmail');
+    
+    if (!isAuthenticated) {
+      router.push('/login');
+    } else {
+      setUserEmail(email);
+    }
+  }, [router]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userEmail');
+    router.push('/login');
+  };
+
   return (
     <>
       <Head>
@@ -19,7 +41,7 @@ export default function Home() {
       </Head>
 
       <div className={`${styles.page} ${geistSans.variable}`}>
-        <Navbar />
+        <Navbar userEmail={userEmail} onLogout={handleLogout} />
         <main className={styles.main}>
           <h1 className={styles.title}>Gizmo360</h1>
           <p className={styles.subtitle}>Stay ahead with the latest in technology</p>

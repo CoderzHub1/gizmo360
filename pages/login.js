@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/Login.module.css';
 
@@ -49,6 +49,9 @@ export default function Login() {
           setFormData({...formData, password: ''});
           setError('Account created! Please login.');
         } else {
+          // Save auth state in localStorage
+          localStorage.setItem('isAuthenticated', 'true');
+          localStorage.setItem('userEmail', formData.email);
           // If login successful, redirect to dashboard
           router.push('/');
         }
@@ -61,6 +64,14 @@ export default function Login() {
       setLoading(false);
     }
   };
+
+  // Check for existing auth on mount
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('isAuthenticated');
+    if (isAuthenticated === 'true') {
+      router.push('/');
+    }
+  }, [router]);
 
   return (
     <>

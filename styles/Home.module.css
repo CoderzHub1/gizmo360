@@ -62,11 +62,11 @@
 .title {
   font-size: 4rem;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  background: linear-gradient(67deg, #00ffea, #f700ff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: glow 2s ease-in-out infinite alternate;
+  transition: all 0.2s ease-in-out;
 }
 
 .subtitle {

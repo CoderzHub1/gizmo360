@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
-export default function Navbar() {
+export default function Navbar({ userEmail, onLogout }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -43,7 +43,6 @@ export default function Navbar() {
             <span className={styles.bar}></span>
           </button>
         </div>
-        
         <div className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}>
           <Link href="/" className={styles.navLink} onClick={closeMenu}>
             Home
@@ -57,6 +56,21 @@ export default function Navbar() {
           <Link href="/contact" className={styles.navLink} onClick={closeMenu}>
             Contact
           </Link>
+          {!userEmail && (
+            <Link href="/login" className={styles.navLink} onClick={closeMenu}>
+              Login/Signup
+            </Link>
+          )}
+        </div>
+        <div className={styles.userSection}>
+          {userEmail && (
+            <>
+              <p className={styles.userEmail}>{userEmail}</p>
+              <button onClick={onLogout} className={styles.logoutButton}>
+                Logout
+              </button>
+            </>
+          )}
         </div>
       </div>
     </nav>
