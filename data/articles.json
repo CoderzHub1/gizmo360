@@ -1,0 +1,92 @@
+{
+  "articles": [
+    {
+      "id": "future-of-ai-2025",
+      "title": "The Future of AI in 2025",
+      "category": "AI & ML",
+      "excerpt": "Exploring the latest breakthroughs in artificial intelligence and their impact on society.",
+      "readTime": "5 min read",
+      "status": "Trending",
+      "content": [
+        {
+          "type": "text",
+          "value": "Artificial Intelligence has come a long way since its inception. In 2025, we're witnessing unprecedented advancements in machine learning algorithms and neural networks. The integration of AI in everyday life has become more seamless than ever before."
+        },
+        {
+          "type": "text",
+          "value": "One of the most significant developments is in natural language processing. Large language models have evolved to understand context with near-human accuracy. This has revolutionized how we interact with machines, from virtual assistants to automated customer service."
+        },
+        {
+          "type": "table",
+          "caption": "AI Model Performance Comparison 2024 vs 2025",
+          "headers": ["Metric", "2024 Performance", "2025 Performance", "Improvement"],
+          "rows": [
+            ["Accuracy", "92%", "98%", "+6%"],
+            ["Processing Speed", "100ms", "15ms", "-85ms"],
+            ["Memory Usage", "16GB", "4GB", "-75%"],
+            ["Training Time", "72 hours", "12 hours", "-83%"]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Another breakthrough area is computer vision. AI systems can now process and understand visual information with remarkable precision, leading to innovations in autonomous vehicles, medical diagnosis, and augmented reality applications."
+        },
+        {
+          "type": "table",
+          "caption": "AI Applications Across Industries",
+          "headers": ["Industry", "Primary Use Case", "Adoption Rate"],
+          "rows": [
+            ["Healthcare", "Disease Detection", "78%"],
+            ["Automotive", "Autonomous Driving", "65%"],
+            ["Finance", "Fraud Detection", "89%"],
+            ["Retail", "Inventory Management", "72%"]
+          ]
+        },
+        {
+          "type": "text",
+          "value": "However, these advancements also raise important ethical considerations. As AI systems become more sophisticated, questions about privacy, bias, and accountability become increasingly relevant."
+        },
+        {
+          "type": "text",
+          "value": "Looking ahead, experts predict even more revolutionary applications of AI, from personalized medicine to climate change solutions. The key will be ensuring these technologies develop in ways that benefit all of humanity."
+        }
+      ]
+    },
+    {
+      "id": "modern-web-development",
+      "title": "Modern Web Development",
+      "category": "Web Dev",
+      "excerpt": "Best practices and frameworks that are shaping the future of web development.",
+      "readTime": "8 min read",
+      "status": "Popular",
+      "content": "The landscape of web development is constantly evolving, and staying current with modern practices is crucial. Today's web development emphasizes performance, accessibility, and user experience more than ever before.\n\nFrameworks like Next.js have revolutionized how we build web applications, offering features like server-side rendering and static site generation out of the box. This has led to faster, more SEO-friendly websites that provide better user experiences.\n\nModern CSS has also evolved significantly, with features like Grid and Flexbox making complex layouts easier to implement. CSS-in-JS solutions and utility-first frameworks like Tailwind CSS have changed how we approach styling.\n\nWebAssembly is opening new possibilities for web applications, allowing developers to run high-performance code in the browser. This has enabled more complex applications, from video editors to 3D games, to run directly in the browser.\n\nAs we look to the future, concepts like Edge Computing and Progressive Web Apps continue to push the boundaries of what's possible on the web."
+    },
+    {
+      "id": "security-digital-age",
+      "title": "Security in the Digital Age",
+      "category": "Cybersecurity",
+      "excerpt": "Essential cybersecurity practices and emerging threats in the tech landscape.",
+      "readTime": "6 min read",
+      "status": "New",
+      "content": "In our increasingly connected world, cybersecurity has become more critical than ever. The digital landscape is constantly evolving, and with it, the nature of cyber threats continues to change.\n\nRecent years have seen a surge in sophisticated ransomware attacks targeting both individuals and organizations. The rise of remote work has created new vulnerabilities that cybercriminals are quick to exploit.\n\nZero-trust architecture has emerged as a leading security model, replacing the traditional perimeter-based security approach. This model operates on the principle of 'never trust, always verify,' requiring all users to be authenticated, authorized, and continuously validated.\n\nArtificial Intelligence is playing a dual role in cybersecurity. While it helps in detecting and preventing cyber attacks, it's also being used by malicious actors to create more sophisticated attack vectors.\n\nAs we move forward, the importance of basic security practices - strong passwords, two-factor authentication, and regular software updates - remains paramount. However, these must be complemented with advanced security measures to protect against evolving threats."
+    },
+    {
+      "id": "your-article-title",
+      "title": "Your Article Title",
+      "category": "Category Name",
+      "excerpt": "A brief description of the article",
+      "content": "The full article content",
+      "readTime": "5 min read",
+      "status": "New"
+    },
+    {
+      "id": "next-js-tutorial",
+      "title": "next Js tutorial",
+      "category": "Web Dev",
+      "excerpt": "all about next js",
+      "content": "Next.js is a powerful React-based framework developed by Vercel that enables developers to build fast, scalable, and SEO-friendly web applications. It offers features like server-side rendering (SSR), static site generation (SSG), and API routes out of the box, making it a full-stack solution for modern web development. With its file-based routing system and built-in performance optimizations, Next.js simplifies the development process while improving user experience. It also supports dynamic routing, image optimization, and seamless deployment through platforms like Vercel, making it a popular choice among developers building production-ready web apps.",
+      "readTime": "5 min read",
+      "status": "New"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from "next/head";
+import Link from 'next/link';
 import { Geist } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Navbar from "@/pages/components/Navbar";
@@ -13,6 +14,7 @@ const geistSans = Geist({
 export default function Home() {
   const router = useRouter();
   const [userEmail, setUserEmail] = useState('');
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const isAuthenticated = localStorage.getItem('isAuthenticated');
@@ -24,6 +26,13 @@ export default function Home() {
       setUserEmail(email);
     }
   }, [router]);
+
+  useEffect(() => {
+    fetch('/api/articles')
+      .then(res => res.json())
+      .then(data => setArticles(data.articles))
+      .catch(error => console.error('Error fetching articles:', error));
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
@@ -49,38 +58,18 @@ export default function Home() {
           <div className={styles.featuredPosts}>
             <h2 className={styles.sectionTitle}>Featured Articles</h2>
             <div className={styles.content}>
-              <div className={styles.card}>
-                <span className={styles.tag}>AI & ML</span>
-                <h3>The Future of AI in 2025</h3>
-                <p>Exploring the latest breakthroughs in artificial intelligence and their impact on society.</p>
-                <div className={styles.cardMeta}>
-                  <span>5 min read</span>
-                  <span>•</span>
-                  <span>Trending</span>
-                </div>
-              </div>
-
-              <div className={styles.card}>
-                <span className={styles.tag}>Web Dev</span>
-                <h3>Modern Web Development</h3>
-                <p>Best practices and frameworks that are shaping the future of web development.</p>
-                <div className={styles.cardMeta}>
-                  <span>8 min read</span>
-                  <span>•</span>
-                  <span>Popular</span>
-                </div>
-              </div>
-
-              <div className={styles.card}>
-                <span className={styles.tag}>Cybersecurity</span>
-                <h3>Security in the Digital Age</h3>
-                <p>Essential cybersecurity practices and emerging threats in the tech landscape.</p>
-                <div className={styles.cardMeta}>
-                  <span>6 min read</span>
-                  <span>•</span>
-                  <span>New</span>
-                </div>
-              </div>
+              {articles.map(article => (
+                <Link href={`/article/${article.id}`} key={article.id} className={styles.card}>
+                  <span className={styles.tag}>{article.category}</span>
+                  <h3>{article.title}</h3>
+                  <p>{article.excerpt}</p>
+                  <div className={styles.cardMeta}>
+                    <span>{article.readTime}</span>
+                    <span>•</span>
+                    <span>{article.status}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
 

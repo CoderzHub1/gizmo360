@@ -61,8 +61,7 @@ export default function Navbar({ userEmail, onLogout }) {
               Login/Signup
             </Link>
           )}
-        </div>
-        <div className={styles.userSection}>
+          <div className={styles.userSection}>
           {userEmail && (
             <>
               <p className={styles.userEmail}>{userEmail}</p>
@@ -72,6 +71,8 @@ export default function Navbar({ userEmail, onLogout }) {
             </>
           )}
         </div>
+        </div>
+
       </div>
     </nav>
   );
