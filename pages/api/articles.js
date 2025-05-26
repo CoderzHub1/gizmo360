@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  if (req.method === 'GET') {=
+  if (req.method === 'GET') {
     const { id } = req.query;
     if (id) {
       const article = articles.articles.find(article => article.id === id);
