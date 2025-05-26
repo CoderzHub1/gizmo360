@@ -13,6 +13,11 @@
           "value": "Artificial Intelligence has come a long way since its inception. In 2025, we're witnessing unprecedented advancements in machine learning algorithms and neural networks. The integration of AI in everyday life has become more seamless than ever before."
         },
         {
+          "type": "image",
+          "url": "/images/ai-evolution.jpg",
+          "caption": "Evolution of AI capabilities from 2020 to 2025"
+        },
+        {
           "type": "text",
           "value": "One of the most significant developments is in natural language processing. Large language models have evolved to understand context with near-human accuracy. This has revolutionized how we interact with machines, from virtual assistants to automated customer service."
         },

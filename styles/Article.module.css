@@ -92,6 +92,26 @@
   color: #4b5563;
 }
 
+.imageContainer {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.articleImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imageCaption {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .main {
     padding: 1rem;

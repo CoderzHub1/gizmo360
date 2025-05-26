@@ -76,6 +76,19 @@ export default function Article() {
                 article.content.map((block, index) => {
                   if (block.type === 'text') {
                     return <p key={index}>{block.value}</p>;
+                  } else if (block.type === 'image') {
+                    return (
+                      <div key={index} className={styles.imageContainer}>
+                        <img 
+                          src={block.url} 
+                          alt={block.caption || ''} 
+                          className={styles.articleImage}
+                        />
+                        {block.caption && (
+                          <p className={styles.imageCaption}>{block.caption}</p>
+                        )}
+                      </div>
+                    );
                   } else if (block.type === 'table') {
                     return (
                       <div key={index} className={styles.tableContainer}>

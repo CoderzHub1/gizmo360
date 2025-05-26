@@ -3,8 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  if (req.method === 'GET') {
-    // If an id is provided, return a specific article
+  if (req.method === 'GET') {=
     const { id } = req.query;
     if (id) {
       const article = articles.articles.find(article => article.id === id);
@@ -14,7 +13,6 @@ export default function handler(req, res) {
         res.status(404).json({ message: 'Article not found' });
       }
     } else {
-      // Otherwise return all articles
       res.status(200).json(articles);
     }
   } else if (req.method === 'POST') {
@@ -44,7 +42,6 @@ export default function handler(req, res) {
         status
       };
 
-      // Add new article to the array
       articles.articles.push(newArticle);
 
       // Write back to the JSON file
