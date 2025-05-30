@@ -54,6 +54,55 @@ export default function Article() {
               <span>•</span>
               <span>{article.status}</span>
             </div>
+            <div className={styles.content}>
+              {Array.isArray(article.content) ? (
+                article.content.map((block, index) => {
+                  if (block.type === 'text') {
+                    return <p key={index}>{block.value}</p>;
+                  } else if (block.type === 'image') {
+                    return (
+                      <div key={index} className={styles.imageContainer}>
+                        <img 
+                          src={block.url} 
+                          alt={block.caption || ''} 
+                          className={styles.articleImage}
+                        />
+                        {block.caption && (
+                          <p className={styles.imageCaption}>{block.caption}</p>
+                        )}
+                      </div>
+                    );
+                  } else if (block.type === 'table') {
+                    return (
+                      <div key={index} className={styles.tableContainer}>
+                        {block.caption && <h3 className={styles.tableCaption}>{block.caption}</h3>}
+                        <table className={styles.table}>
+                          <thead>
+                            <tr>
+                              {block.headers.map((header, i) => (
+                                <th key={i}>{header}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {block.rows.map((row, rowIndex) => (
+                              <tr key={rowIndex}>
+                                {row.map((cell, cellIndex) => (
+                                  <td key={cellIndex}>{cell}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
+                  return null;
+                })
+              ) : (
+                <p>{article.content}</p>
+              )}
+            </div>
           </article>
         </main>
       </div>

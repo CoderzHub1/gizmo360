@@ -26,21 +26,10 @@ export default function Navbar() {
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.navHeader}>
-        <Link href="/" className={styles.logo}>
-          Gizmo360
-        </Link>
-        
-        <button 
-          className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`} 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-        </button>
-      </div>
+      <Link href="/" className={styles.logo}>
+        Gizmo360
+      </Link>
+      
       <div className={`${styles.navLinks} ${menuOpen ? styles.active : ''}`}>
         <Link href="/" className={styles.navLink} onClick={closeMenu}>
           Home
@@ -55,6 +44,16 @@ export default function Navbar() {
           Contact
         </Link>
       </div>
+
+      <button 
+        className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`} 
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+        <span className={styles.bar}></span>
+      </button>
     </nav>
   );
 }

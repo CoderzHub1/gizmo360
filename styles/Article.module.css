@@ -1,49 +1,56 @@
 .page {
   min-height: 100vh;
   font-family: var(--font-geist-sans);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
 
 .main {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
 .article {
-  background: white;
+  margin-top: 6em;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tag {
   display: inline-block;
-  background: #f3f4f6;
+  background: rgba(0, 255, 255, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.875rem;
-  color: #4b5563;
+  color: #00ffff;
   margin-bottom: 1rem;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  background: linear-gradient(67deg, #00ffea, #f700ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
 .meta {
   display: flex;
   gap: 0.5rem;
-  color: #6b7280;
+  color: #888;
   margin-bottom: 2rem;
   font-size: 0.875rem;
 }
 
 .content {
   line-height: 1.8;
-  color: #374151;
+  color: #e0e0e0;
 }
 
 .content p {
@@ -58,7 +65,7 @@
 .tableCaption {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #374151;
+  color: #fff;
   margin-bottom: 1rem;
   text-align: left;
 }
@@ -67,29 +74,29 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .table th,
 .table td {
   padding: 0.75rem 1rem;
   text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .table th {
-  background-color: #f9fafb;
+  background: rgba(0, 255, 255, 0.05);
   font-weight: 600;
-  color: #374151;
+  color: #00ffff;
 }
 
 .table tr:hover {
-  background-color: #f9fafb;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .table td {
-  color: #4b5563;
+  color: #e0e0e0;
 }
 
 .imageContainer {
@@ -101,12 +108,13 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .imageCaption {
   text-align: center;
-  color: #6b7280;
+  color: #888;
   font-size: 0.875rem;
   margin-top: 0.75rem;
   font-style: italic;
@@ -136,8 +144,7 @@
     font-size: 0.875rem;
   }
   
-  .table th,
-  .table td {
+  .table th, .table td {
     padding: 0.5rem 0.75rem;
   }
 }

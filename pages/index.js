@@ -29,8 +29,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <div className={`${styles.page} ${geistSans.variable}`}>
-        <Navbar />
         <main className={styles.main}>
           <h1 className={styles.title}>Gizmo360</h1>
           <p className={styles.subtitle}>Stay ahead with the latest in technology</p>
@@ -50,18 +50,6 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
-            </div>
-          </div>
-
-          <div className={styles.categories}>
-            <h2 className={styles.sectionTitle}>Explore Topics</h2>
-            <div className={styles.topicGrid}>
-              <a href="#" className={styles.topicCard}>AI & Machine Learning</a>
-              <a href="#" className={styles.topicCard}>Web Development</a>
-              <a href="#" className={styles.topicCard}>Cybersecurity</a>
-              <a href="#" className={styles.topicCard}>Cloud Computing</a>
-              <a href="#" className={styles.topicCard}>Mobile Dev</a>
-              <a href="#" className={styles.topicCard}>DevOps</a>
             </div>
           </div>
         </main>

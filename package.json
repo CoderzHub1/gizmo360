@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@geist-ui/core": "^2.3.8",
+    "geist": "^1.4.2",
     "mongoose": "^8.14.1",
     "next": "15.3.2",
     "nprogress": "^0.2.0",
