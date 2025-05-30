@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Head from "next/head";
 import Link from 'next/link';
 import { Geist } from "next/font/google";
@@ -12,20 +11,7 @@ const geistSans = Geist({
 });
 
 export default function Home() {
-  const router = useRouter();
-  const [userEmail, setUserEmail] = useState('');
   const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
-    const email = localStorage.getItem('userEmail');
-    
-    if (!isAuthenticated) {
-      router.push('/login');
-    } else {
-      setUserEmail(email);
-    }
-  }, [router]);
 
   useEffect(() => {
     fetch('/api/articles')
@@ -33,12 +19,6 @@ export default function Home() {
       .then(data => setArticles(data.articles))
       .catch(error => console.error('Error fetching articles:', error));
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    localStorage.removeItem('userEmail');
-    router.push('/login');
-  };
 
   return (
     <>
@@ -50,7 +30,7 @@ export default function Home() {
       </Head>
 
       <div className={`${styles.page} ${geistSans.variable}`}>
-        <Navbar userEmail={userEmail} onLogout={handleLogout} />
+        <Navbar />
         <main className={styles.main}>
           <h1 className={styles.title}>Gizmo360</h1>
           <p className={styles.subtitle}>Stay ahead with the latest in technology</p>
